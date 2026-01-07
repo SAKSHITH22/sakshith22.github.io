@@ -322,6 +322,7 @@
             flex: 0 0 350px;
             display: flex;
             justify-content: center;
+            
         }
         
         .profile-photo {
@@ -395,7 +396,7 @@
             50% { border-color: var(--terminal-green) }
         }
         
-        /* Projects Section */
+        /* Projects Section - Updated with Icons */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -552,7 +553,7 @@
             box-shadow: 0 5px 15px rgba(0, 243, 255, 0.2);
         }
         
-        /* Contact Section - Complete */
+        /* Contact Section */
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -600,15 +601,6 @@
             color: var(--text-secondary);
         }
         
-        .contact-details a {
-            color: var(--neon-cyan);
-            text-decoration: none;
-        }
-        
-        .contact-details a:hover {
-            text-decoration: underline;
-        }
-        
         .contact-form {
             display: flex;
             flex-direction: column;
@@ -644,31 +636,6 @@
             box-shadow: 0 0 0 2px rgba(0, 243, 255, 0.1);
         }
         
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .contact-status {
-            display: none;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-            text-align: center;
-        }
-        
-        .contact-status.success {
-            background: rgba(39, 202, 63, 0.1);
-            color: #27ca3f;
-            display: block;
-        }
-        
-        .contact-status.error {
-            background: rgba(255, 95, 86, 0.1);
-            color: #ff5f56;
-            display: block;
-        }
-        
         /* Footer */
         footer {
             padding: 3rem 0;
@@ -682,22 +649,6 @@
             flex-direction: column;
             align-items: center;
             gap: 1.5rem;
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-        
-        .footer-social a {
-            color: var(--text-secondary);
-            font-size: 1.3rem;
-            transition: color var(--transition-fast);
-        }
-        
-        .footer-social a:hover {
-            color: var(--neon-cyan);
         }
         
         .back-to-top {
@@ -939,13 +890,13 @@
                 </div>
                 
                 <div class="profile-photo-container">
-                    <img src="https://github.com/SAKSHITH22/sakshith22.github.io/blob/main/photo.jpeg?raw=true" alt="Sakshith Reddy" class="profile-photo">
+                    <img src="https://github.com/SAKSHITH22/sakshith22.github.io/blob/main/photo.jpg?raw=true" alt="Sakshith Reddy" class="profile-photo">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Section with Updated Icons -->
     <section id="projects">
         <div class="container">
             <h2>Projects</h2>
@@ -1108,3 +1059,201 @@
                     </div>
                 </div>
                 
+                <!-- DevOps Tools -->
+                <div class="skill-category glass neon-glow">
+                    <h3><i class="fas fa-tools"></i> DevOps Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Terraform</span>
+                        <span class="skill-item">Ansible</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">Kubernetes</span>
+                        <span class="skill-item">Linux (Ubuntu)</span>
+                        <span class="skill-item">Git/GitHub</span>
+                    </div>
+                </div>
+                
+                <!-- CI/CD -->
+                <div class="skill-category glass neon-glow">
+                    <h3><i class="fas fa-code-branch"></i> CI/CD & Source Code</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Jenkins</span>
+                        <span class="skill-item">CI/CD Pipelines</span>
+                        <span class="skill-item">Git Version Control</span>
+                        <span class="skill-item">Infrastructure as Code</span>
+                        <span class="skill-item">Deployment Automation</span>
+                    </div>
+                </div>
+                                <!-- Contact Section - Added -->
+                <section id="contact">
+                    <div class="container">
+                        <h2>Contact Me</h2>
+                        <div class="contact-content">
+                            <div class="contact-info">
+                                <div class="contact-item glass">
+                                    <i class="fas fa-envelope"></i>
+                                    <div class="contact-details">
+                                        <h4>Email</h4>
+                                        <p><a href="mailto:sakshithreddy.7@gmail.com">sakshithreddy.7@gmail.com</a></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item glass">
+                                    <i class="fas fa-phone"></i>
+                                    <div class="contact-details">
+                                        <h4>Phone</h4>
+                                        <p>+91 6300047653</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item glass">
+                                    <i class="fab fa-linkedin"></i>
+                                    <div class="contact-details">
+                                        <h4>LinkedIn</h4>
+                                        <p><a href="https://www.linkedin.com/in/sakshith-reddy-siddireddygari" target="_blank">linkedin.com/in/sakshith-reddy-siddireddygari</a></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item glass">
+                                    <i class="fab fa-github"></i>
+                                    <div class="contact-details">
+                                        <h4>GitHub</h4>
+                                        <p><a href="https://github.com/SAKSHITH22" target="_blank">github.com/SAKSHITH22</a></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item glass">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div class="contact-details">
+                                        <h4>Location</h4>
+                                        <p>Hyderabad, Telangana</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-form glass" style="padding: 2rem;">
+                                <h3 style="margin-bottom: 1.5rem;">Send a Message</h3>
+                                <form id="contactForm">
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" id="name" name="name" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="subject">Subject</label>
+                                        <input type="text" id="subject" name="subject" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea id="message" name="message" required></textarea>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                                    
+                                    <div id="contactStatus" class="contact-status"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+             
+               
+
+                <script>
+                    // Navigation toggle for mobile
+                    const hamburger = document.getElementById('hamburger');
+                    const navLinks = document.getElementById('navLinks');
+                    
+                    hamburger.addEventListener('click', () => {
+                        navLinks.classList.toggle('active');
+                    });
+                    
+                    // Close mobile menu when clicking a link
+                    document.querySelectorAll('.nav-links a').forEach(link => {
+                        link.addEventListener('click', () => {
+                            navLinks.classList.remove('active');
+                        });
+                    });
+                    
+                    // Form submission handling
+                    const contactForm = document.getElementById('contactForm');
+                    const contactStatus = document.getElementById('contactStatus');
+                    
+                    contactForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        // Simple form validation
+                        const name = document.getElementById('name').value;
+                        const email = document.getElementById('email').value;
+                        const subject = document.getElementById('subject').value;
+                        const message = document.getElementById('message').value;
+                        
+                        if (!name || !email || !subject || !message) {
+                            contactStatus.textContent = 'Please fill in all fields.';
+                            contactStatus.className = 'contact-status error';
+                            return;
+                        }
+                        
+                        // Here you would typically send the form data to a server
+                        // For now, we'll just show a success message
+                        contactStatus.textContent = 'Thank you for your message! I\'ll get back to you soon.';
+                        contactStatus.className = 'contact-status success';
+                        
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Clear status message after 5 seconds
+                        setTimeout(() => {
+                            contactStatus.textContent = '';
+                            contactStatus.className = 'contact-status';
+                        }, 5000);
+                    });
+                    
+                    // Smooth scrolling for navigation links
+                    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                        anchor.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            
+                            const targetId = this.getAttribute('href');
+                            if (targetId === '#') return;
+                            
+                            const targetElement = document.querySelector(targetId);
+                            if (targetElement) {
+                                window.scrollTo({
+                                    top: targetElement.offsetTop - 80,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        });
+                    });
+                    
+                    // Update active navigation link on scroll
+                    window.addEventListener('scroll', () => {
+                        const sections = document.querySelectorAll('section');
+                        const navLinks = document.querySelectorAll('.nav-links a');
+                        
+                        let current = '';
+                        sections.forEach(section => {
+                            const sectionTop = section.offsetTop;
+                            const sectionHeight = section.clientHeight;
+                            if (scrollY >= (sectionTop - 100)) {
+                                current = section.getAttribute('id');
+                            }
+                        });
+                        
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${current}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    });
+                </script>
+            </body>
+            </html>
