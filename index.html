@@ -20,7 +20,6 @@
             --neon-blue: #00f3ff;
             --neon-purple: #9d4edd;
             --neon-cyan: #00d4ff;
-            --neon-pink: #ff006e;
             --terminal-green: #00ff9d;
             
             /* Text Colors */
@@ -47,7 +46,7 @@
         
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px; /* Prevent content from hiding under fixed header */
+            scroll-padding-top: 80px;
         }
         
         body {
@@ -166,7 +165,7 @@
             box-shadow: 0 10px 25px rgba(0, 243, 255, 0.2);
         }
         
-        /* Navigation - Fixed Issues */
+        /* Navigation */
         header {
             position: fixed;
             top: 0;
@@ -258,14 +257,14 @@
             z-index: 1001;
         }
         
-        /* Hero Section - Fixed Padding Issue */
+        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
-            padding-top: 100px; /* Added more padding for fixed header */
+            padding-top: 100px;
         }
         
         .hero-bg {
@@ -396,7 +395,53 @@
             50% { border-color: var(--terminal-green) }
         }
         
-        /* Projects Section - Updated with your details */
+        /* Skills Section - Updated without percentages */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            padding: 2rem;
+        }
+        
+        .skill-category h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+            color: var(--neon-cyan);
+        }
+        
+        .skill-category h3 i {
+            font-size: 1.3rem;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .skill-item {
+            padding: 8px 16px;
+            background: rgba(0, 243, 255, 0.1);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            border-radius: 20px;
+            color: var(--neon-cyan);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            transition: all var(--transition-fast);
+        }
+        
+        .skill-item:hover {
+            background: rgba(0, 243, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 243, 255, 0.2);
+        }
+        
+        /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -487,7 +532,7 @@
             font-size: 0.9rem;
         }
         
-        /* Contact Section - Updated */
+        /* Contact Section */
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -603,7 +648,7 @@
             transform: translateY(-3px);
         }
         
-        /* Responsive Styles - Fixed Issues */
+        /* Responsive Styles */
         @media (max-width: 1100px) {
             .hero-content {
                 flex-direction: column-reverse;
@@ -693,6 +738,10 @@
             }
             
             .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-container {
                 grid-template-columns: 1fr;
             }
             
@@ -835,12 +884,14 @@
                         <span class="tech-badge">RDS</span>
                         <span class="tech-badge">S3</span>
                         <span class="tech-badge">IAM</span>
+                        <span class="tech-badge">Security Groups</span>
+                        <span class="tech-badge">NAT Gateway</span>
                     </div>
                     
                     <p>Deployed a secure and scalable 3-tier AWS architecture using Terraform, integrating AWS Secrets Manager to securely manage RDS credentials.</p>
                     
                     <div class="responsibilities">
-                        <h4>Responsibilities:</h4>
+                        <h4>Key Responsibilities:</h4>
                         <ul>
                             <li>Designed and deployed a secure 3-tier AWS infrastructure (Web, App, DB) using Terraform</li>
                             <li>Implemented AWS Secrets Manager for secure RDS credential management</li>
@@ -851,7 +902,7 @@
                     
                     <div class="project-actions">
                         <a href="https://github.com/SAKSHITH22" target="_blank" class="btn btn-secondary">
-                            <i class="fab fa-github"></i> GitHub
+                            <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
                 </div>
@@ -871,12 +922,14 @@
                         <span class="tech-badge">Kubernetes</span>
                         <span class="tech-badge">GitHub</span>
                         <span class="tech-badge">Python</span>
+                        <span class="tech-badge">CI/CD</span>
+                        <span class="tech-badge">Git</span>
                     </div>
                     
                     <p>Implemented a complete CI/CD pipeline for a Python web application using Jenkins, Docker, and Kubernetes with zero-downtime deployments.</p>
                     
                     <div class="responsibilities">
-                        <h4>Responsibilities:</h4>
+                        <h4>Key Responsibilities:</h4>
                         <ul>
                             <li>Containerized Python web application using Docker</li>
                             <li>Designed automated CI/CD pipeline in Jenkins</li>
@@ -887,7 +940,7 @@
                     
                     <div class="project-actions">
                         <a href="https://github.com/SAKSHITH22" target="_blank" class="btn btn-secondary">
-                            <i class="fab fa-github"></i> GitHub
+                            <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
                 </div>
@@ -903,16 +956,16 @@
                     
                     <div class="tech-stack">
                         <span class="tech-badge">Ansible</span>
-                        <span class="tech-badge">Linux</span>
+                        <span class="tech-badge">Linux (Ubuntu)</span>
                         <span class="tech-badge">YAML</span>
                         <span class="tech-badge">Tomcat</span>
-                        <span class="tech-badge">Git</span>
+                        <span class="tech-badge">Git/GitHub</span>
                     </div>
                     
-                    <p>Developed Ansible playbooks to automate installation and configuration of Apache Tomcat on multiple Linux servers.</p>
+                    <p>Developed Ansible playbooks to automate installation and configuration of Apache Tomcat on multiple Linux servers, ensuring faster and consistent deployments.</p>
                     
                     <div class="responsibilities">
-                        <h4>Responsibilities:</h4>
+                        <h4>Key Responsibilities:</h4>
                         <ul>
                             <li>Created Ansible playbooks for Tomcat automation</li>
                             <li>Managed dependencies and configurations using YAML</li>
@@ -923,7 +976,7 @@
                     
                     <div class="project-actions">
                         <a href="https://github.com/SAKSHITH22" target="_blank" class="btn btn-secondary">
-                            <i class="fab fa-github"></i> GitHub
+                            <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
                 </div>
@@ -931,114 +984,62 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section - Clean without percentages -->
     <section id="skills">
         <div class="container">
             <h2>Technical Skills</h2>
-            <div class="skills-tabs">
-                <button class="tab-btn active" data-tab="cloud">Cloud</button>
-                <button class="tab-btn" data-tab="devops">DevOps Tools</button>
-                <button class="tab-btn" data-tab="cicd">CI/CD</button>
-                <button class="tab-btn" data-tab="monitoring">Monitoring</button>
-            </div>
-            
-            <div class="skills-grid">
+            <div class="skills-container">
                 <!-- Cloud Skills -->
-                <div class="skill-card glass neon-glow" data-category="cloud">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fab fa-aws"></i>
-                        </div>
-                        <h3>AWS Cloud</h3>
-                    </div>
-                    <div class="skill-progress">
-                        <div class="progress-bar" style="width: 85%"></div>
-                    </div>
-                    <div class="skill-level">
-                        <span>Proficient</span>
-                        <span>85%</span>
-                    </div>
-                </div>
-                
-                <div class="skill-card glass neon-glow" data-category="cloud">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h3>Terraform</h3>
-                    </div>
-                    <div class="skill-progress">
-                        <div class="progress-bar" style="width: 80%"></div>
-                    </div>
-                    <div class="skill-level">
-                        <span>Proficient</span>
-                        <span>80%</span>
+                <div class="skill-category glass neon-glow">
+                    <h3><i class="fas fa-cloud"></i> Cloud Platforms</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Amazon Web Services (AWS)</span>
+                        <span class="skill-item">EC2</span>
+                        <span class="skill-item">VPC</span>
+                        <span class="skill-item">IAM</span>
+                        <span class="skill-item">S3</span>
+                        <span class="skill-item">RDS</span>
+                        <span class="skill-item">Security Groups</span>
+                        <span class="skill-item">Load Balancer</span>
+                        <span class="skill-item">Auto Scaling</span>
                     </div>
                 </div>
                 
                 <!-- DevOps Tools -->
-                <div class="skill-card glass neon-glow" data-category="devops">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fab fa-docker"></i>
-                        </div>
-                        <h3>Docker</h3>
-                    </div>
-                    <div class="skill-progress">
-                        <div class="progress-bar" style="width: 90%"></div>
-                    </div>
-                    <div class="skill-level">
-                        <span>Advanced</span>
-                        <span>90%</span>
-                    </div>
-                </div>
-                
-                <div class="skill-card glass neon-glow" data-category="devops">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-cubes"></i>
-                        </div>
-                        <h3>Kubernetes</h3>
-                    </div>
-                    <div class="skill-progress">
-                        <div class="progress-bar" style="width: 75%"></div>
-                    </div>
-                    <div class="skill-level">
-                        <span>Intermediate</span>
-                        <span>75%</span>
+                <div class="skill-category glass neon-glow">
+                    <h3><i class="fas fa-tools"></i> DevOps Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Terraform</span>
+                        <span class="skill-item">Ansible</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">Kubernetes</span>
+                        <span class="skill-item">Linux (Ubuntu)</span>
+                        <span class="skill-item">Git/GitHub</span>
                     </div>
                 </div>
                 
                 <!-- CI/CD -->
-                <div class="skill-card glass neon-glow" data-category="cicd">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fab fa-jenkins"></i>
-                        </div>
-                        <h3>Jenkins</h3>
-                    </div>
-                    <div class="skill-progress">
-                        <div class="progress-bar" style="width: 80%"></div>
-                    </div>
-                    <div class="skill-level">
-                        <span>Proficient</span>
-                        <span>80%</span>
+                <div class="skill-category glass neon-glow">
+                    <h3><i class="fas fa-code-branch"></i> CI/CD & Source Code</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Jenkins</span>
+                        <span class="skill-item">GitHub Actions</span>
+                        <span class="skill-item">CI/CD Pipelines</span>
+                        <span class="skill-item">Git Version Control</span>
+                        <span class="skill-item">Infrastructure as Code</span>
                     </div>
                 </div>
                 
-                <div class="skill-card glass neon-glow" data-category="cicd">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <h3>GitHub Actions</h3>
-                    </div>
-                    <div class="skill-progress">
-                        <div class="progress-bar" style="width: 85%"></div>
-                    </div>
-                    <div class="skill-level">
-                        <span>Proficient</span>
-                        <span>85%</span>
+                <!-- Monitoring & Soft Skills -->
+                <div class="skill-category glass neon-glow">
+                    <h3><i class="fas fa-user-check"></i> Additional Skills</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Communication</span>
+                        <span class="skill-item">Problem-Solving</span>
+                        <span class="skill-item">Team Collaboration</span>
+                        <span class="skill-item">Adaptability</span>
+                        <span class="skill-item">Deployment Automation</span>
+                        <span class="skill-item">Version Control</span>
                     </div>
                 </div>
             </div>
@@ -1102,13 +1103,4 @@
                         
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <
+                            <input type="email" id="email" name="
