@@ -1,8 +1,3 @@
-# Fixed Portfolio with Clean Technical Skills Section
-
-Here's the updated HTML with the percentage removed from Technical Skills and other improvements:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -400,7 +395,118 @@ Here's the updated HTML with the percentage removed from Technical Skills and ot
             50% { border-color: var(--terminal-green) }
         }
         
-        /* Skills Section - Updated without percentages */
+        /* Projects Section - Updated with Icons */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            padding: 2rem;
+            transition: transform var(--transition-medium);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-number {
+            font-family: var(--font-mono);
+            color: var(--neon-cyan);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-preview {
+            height: 180px;
+            background: linear-gradient(135deg, rgba(0, 243, 255, 0.1), rgba(157, 78, 221, 0.1));
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-preview .icon-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .project-icon {
+            font-size: 2.5rem;
+            color: var(--neon-cyan);
+            transition: transform var(--transition-fast);
+        }
+        
+        .project-icon:hover {
+            transform: scale(1.2);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tech-badge {
+            padding: 5px 12px;
+            background: rgba(0, 243, 255, 0.1);
+            color: var(--neon-cyan);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-family: var(--font-mono);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .tech-badge i {
+            font-size: 0.9rem;
+        }
+        
+        .responsibilities {
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .responsibilities li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        
+        .responsibilities li:before {
+            content: '▸';
+            color: var(--neon-cyan);
+            position: absolute;
+            left: 0;
+        }
+        
+        .project-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: auto;
+        }
+        
+        .project-actions .btn {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+        
+        /* Skills Section */
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -444,97 +550,6 @@ Here's the updated HTML with the percentage removed from Technical Skills and ot
             background: rgba(0, 243, 255, 0.2);
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 243, 255, 0.2);
-        }
-        
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        
-        .project-card {
-            padding: 2rem;
-            transition: transform var(--transition-medium);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .project-number {
-            font-family: var(--font-mono);
-            color: var(--neon-cyan);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .project-preview {
-            height: 150px;
-            background: linear-gradient(135deg, rgba(0, 243, 255, 0.1), rgba(157, 78, 221, 0.1));
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .project-preview i {
-            font-size: 3rem;
-            color: var(--neon-cyan);
-        }
-        
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1rem 0;
-        }
-        
-        .tech-badge {
-            padding: 5px 10px;
-            background: rgba(0, 243, 255, 0.1);
-            color: var(--neon-cyan);
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-family: var(--font-mono);
-        }
-        
-        .responsibilities {
-            margin-top: 1rem;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-        
-        .responsibilities li {
-            margin-bottom: 0.5rem;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            position: relative;
-            padding-left: 1.2rem;
-        }
-        
-        .responsibilities li:before {
-            content: '▸';
-            color: var(--neon-cyan);
-            position: absolute;
-            left: 0;
-        }
-        
-        .project-actions {
-            display: flex;
-            gap: 1rem;
-            margin-top: auto;
-        }
-        
-        .project-actions .btn {
-            padding: 8px 16px;
-            font-size: 0.9rem;
         }
         
         /* Contact Section */
@@ -774,6 +789,10 @@ Here's the updated HTML with the percentage removed from Technical Skills and ot
             .hero {
                 padding-top: 120px;
             }
+            
+            .project-preview {
+                height: 150px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -806,6 +825,14 @@ Here's the updated HTML with the percentage removed from Technical Skills and ot
             
             .project-card {
                 padding: 1.5rem;
+            }
+            
+            .project-preview .icon-container {
+                gap: 10px;
+            }
+            
+            .project-icon {
+                font-size: 2rem;
             }
         }
     </style>
@@ -868,29 +895,36 @@ Here's the updated HTML with the percentage removed from Technical Skills and ot
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Section with Updated Icons -->
     <section id="projects">
         <div class="container">
             <h2>Projects</h2>
             <div class="projects-grid">
-                <!-- Project 1 -->
+                <!-- Project 1: AWS 3-Tier Architecture -->
                 <div class="project-card glass neon-glow">
                     <div class="project-number">01</div>
                     <h3>AWS 3-Tier Architecture using Terraform</h3>
                     
                     <div class="project-preview">
-                        <i class="fab fa-aws"></i>
+                        <div class="icon-container">
+                            <i class="fab fa-aws project-icon"></i>
+                            <i class="fab fa-linux project-icon"></i>
+                            <i class="fas fa-database project-icon"></i>
+                            <i class="fas fa-shield-alt project-icon"></i>
+                            <i class="fas fa-server project-icon"></i>
+                        </div>
                     </div>
                     
                     <div class="tech-stack">
-                        <span class="tech-badge">Terraform</span>
-                        <span class="tech-badge">EC2</span>
-                        <span class="tech-badge">VPC</span>
-                        <span class="tech-badge">RDS</span>
-                        <span class="tech-badge">S3</span>
-                        <span class="tech-badge">IAM</span>
-                        <span class="tech-badge">Security Groups</span>
-                        <span class="tech-badge">NAT Gateway</span>
+                        <span class="tech-badge"><i class="fab fa-aws"></i> AWS</span>
+                        <span class="tech-badge"><i class="fas fa-code"></i> Terraform</span>
+                        <span class="tech-badge"><i class="fas fa-server"></i> EC2</span>
+                        <span class="tech-badge"><i class="fas fa-network-wired"></i> VPC</span>
+                        <span class="tech-badge"><i class="fas fa-database"></i> RDS</span>
+                        <span class="tech-badge"><i class="fas fa-archive"></i> S3</span>
+                        <span class="tech-badge"><i class="fas fa-user-shield"></i> IAM</span>
+                        <span class="tech-badge"><i class="fas fa-shield-alt"></i> Security Groups</span>
+                        <span class="tech-badge"><i class="fas fa-exchange-alt"></i> NAT Gateway</span>
                     </div>
                     
                     <p>Deployed a secure and scalable 3-tier AWS architecture using Terraform, integrating AWS Secrets Manager to securely manage RDS credentials.</p>
@@ -912,23 +946,29 @@ Here's the updated HTML with the percentage removed from Technical Skills and ot
                     </div>
                 </div>
                 
-                <!-- Project 2 -->
+                <!-- Project 2: CI/CD Pipeline -->
                 <div class="project-card glass neon-glow">
                     <div class="project-number">02</div>
                     <h3>CI/CD Pipeline for Python Web App</h3>
                     
                     <div class="project-preview">
-                        <i class="fab fa-docker"></i>
+                        <div class="icon-container">
+                            <i class="fab fa-docker project-icon"></i>
+                            <i class="fab fa-jenkins project-icon"></i>
+                            <i class="fab fa-python project-icon"></i>
+                            <i class="fab fa-github project-icon"></i>
+                            <i class="fas fa-sync-alt project-icon"></i>
+                        </div>
                     </div>
                     
                     <div class="tech-stack">
-                        <span class="tech-badge">Jenkins</span>
-                        <span class="tech-badge">Docker</span>
-                        <span class="tech-badge">Kubernetes</span>
-                        <span class="tech-badge">GitHub</span>
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">CI/CD</span>
-                        <span class="tech-badge">Git</span>
+                        <span class="tech-badge"><i class="fab fa-jenkins"></i> Jenkins</span>
+                        <span class="tech-badge"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="tech-badge"><i class="fas fa-cubes"></i> Kubernetes</span>
+                        <span class="tech-badge"><i class="fab fa-github"></i> GitHub</span>
+                        <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                        <span class="tech-badge"><i class="fas fa-code-branch"></i> CI/CD</span>
+                        <span class="tech-badge"><i class="fab fa-git-alt"></i> Git</span>
                     </div>
                     
                     <p>Implemented a complete CI/CD pipeline for a Python web application using Jenkins, Docker, and Kubernetes with zero-downtime deployments.</p>
@@ -950,21 +990,29 @@ Here's the updated HTML with the percentage removed from Technical Skills and ot
                     </div>
                 </div>
                 
-                <!-- Project 3 -->
+                <!-- Project 3: Automated Tomcat Deployment -->
                 <div class="project-card glass neon-glow">
                     <div class="project-number">03</div>
                     <h3>Automated Tomcat Deployment using Ansible</h3>
                     
                     <div class="project-preview">
-                        <i class="fab fa-linux"></i>
+                        <div class="icon-container">
+                            <i class="fab fa-linux project-icon"></i>
+                            <i class="fas fa-cogs project-icon"></i>
+                            <i class="fas fa-file-code project-icon"></i>
+                            <i class="fab fa-java project-icon"></i>
+                            <i class="fas fa-robot project-icon"></i>
+                        </div>
                     </div>
                     
                     <div class="tech-stack">
-                        <span class="tech-badge">Ansible</span>
-                        <span class="tech-badge">Linux (Ubuntu)</span>
-                        <span class="tech-badge">YAML</span>
-                        <span class="tech-badge">Tomcat</span>
-                        <span class="tech-badge">Git/GitHub</span>
+                        <span class="tech-badge"><i class="fas fa-cogs"></i> Ansible</span>
+                        <span class="tech-badge"><i class="fab fa-linux"></i> Linux (Ubuntu)</span>
+                        <span class="tech-badge"><i class="fas fa-file-code"></i> YAML</span>
+                        <span class="tech-badge"><i class="fab fa-java"></i> Tomcat</span>
+                        <span class="tech-badge"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="tech-badge"><i class="fas fa-robot"></i> Automation</span>
+                        <span class="tech-badge"><i class="fas fa-code"></i> Playbooks</span>
                     </div>
                     
                     <p>Developed Ansible playbooks to automate installation and configuration of Apache Tomcat on multiple Linux servers, ensuring faster and consistent deployments.</p>
@@ -989,7 +1037,7 @@ Here's the updated HTML with the percentage removed from Technical Skills and ot
         </div>
     </section>
 
-    <!-- Skills Section - Clean without percentages -->
+    <!-- Skills Section -->
     <section id="skills">
         <div class="container">
             <h2>Technical Skills</h2>
@@ -1028,84 +1076,10 @@ Here's the updated HTML with the percentage removed from Technical Skills and ot
                     <h3><i class="fas fa-code-branch"></i> CI/CD & Source Code</h3>
                     <div class="skill-list">
                         <span class="skill-item">Jenkins</span>
-                        <span class="skill-item">GitHub Actions</span>
                         <span class="skill-item">CI/CD Pipelines</span>
                         <span class="skill-item">Git Version Control</span>
                         <span class="skill-item">Infrastructure as Code</span>
-                    </div>
-                </div>
-                
-                <!-- Monitoring & Soft Skills -->
-                <div class="skill-category glass neon-glow">
-                    <h3><i class="fas fa-user-check"></i> Additional Skills</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Communication</span>
-                        <span class="skill-item">Problem-Solving</span>
-                        <span class="skill-item">Team Collaboration</span>
-                        <span class="skill-item">Adaptability</span>
                         <span class="skill-item">Deployment Automation</span>
-                        <span class="skill-item">Version Control</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item glass">
-                        <i class="fas fa-envelope"></i>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <p>sakshithreddy.7@gmail.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item glass">
-                        <i class="fas fa-phone"></i>
-                        <div class="contact-details">
-                            <h4>Phone</h4>
-                            <p>+91 6300047653</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item glass">
-                        <i class="fab fa-linkedin"></i>
-                        <div class="contact-details">
-                            <h4>LinkedIn</h4>
-                            <p>linkedin.com/in/sakshith-reddy-siddireddygari</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item glass">
-                        <i class="fab fa-github"></i>
-                        <div class="contact-details">
-                            <h4>GitHub</h4>
-                            <p>github.com/SAKSHITH22</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item glass">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="contact-details">
-                            <h4>Location</h4>
-                            <p>Hyderabad, Telangana</p>
-                        </div>
                     </div>
                 </div>
                 
-                <div class="contact-form glass" style="padding: 2rem;">
-                    <h3 style="margin-bottom: 1.5rem;">Send a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="
