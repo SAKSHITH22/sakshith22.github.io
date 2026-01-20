@@ -636,7 +636,40 @@
             box-shadow: 0 0 0 2px rgba(0, 243, 255, 0.1);
         }
         
-        /* Footer Styles */
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: var(--bg-secondary);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .back-to-top {
+            background: rgba(0, 243, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--neon-cyan);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+        }
+        
+        .back-to-top:hover {
+            background: rgba(0, 243, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        /* NEW FOOTER STYLES */
         footer {
             padding: 4rem 0 2rem;
             background: var(--bg-secondary);
@@ -761,30 +794,36 @@
             margin-bottom: 0.5rem;
         }
         
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: rgba(0, 243, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--neon-cyan);
-            text-decoration: none;
-            transition: all var(--transition-fast);
-            z-index: 999;
-            border: 1px solid rgba(0, 243, 255, 0.3);
-            backdrop-filter: blur(10px);
+        /* Responsive Footer */
+        @media (max-width: 1100px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-about {
+                grid-column: span 2;
+            }
         }
         
-        .back-to-top:hover {
-            background: rgba(0, 243, 255, 0.2);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 243, 255, 0.3);
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-about {
+                grid-column: span 1;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .footer-links,
+            .footer-contact {
+                text-align: center;
+            }
+            
+            .footer-contact p {
+                justify-content: center;
+            }
         }
         
         /* Responsive Styles */
@@ -810,14 +849,6 @@
             
             .hero {
                 padding-top: 120px;
-            }
-            
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-about {
-                grid-column: span 2;
             }
         }
         
@@ -920,32 +951,6 @@
             .project-preview {
                 height: 150px;
             }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-about {
-                grid-column: span 1;
-                align-items: center;
-                text-align: center;
-            }
-            
-            .footer-links,
-            .footer-contact {
-                text-align: center;
-            }
-            
-            .footer-contact p {
-                justify-content: center;
-            }
-            
-            .back-to-top {
-                bottom: 20px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
-            }
         }
         
         @media (max-width: 480px) {
@@ -986,17 +991,6 @@
             
             .project-icon {
                 font-size: 2rem;
-            }
-            
-            .footer-container {
-                gap: 2rem;
-            }
-            
-            .back-to-top {
-                bottom: 15px;
-                right: 15px;
-                width: 40px;
-                height: 40px;
             }
         }
     </style>
@@ -1154,4 +1148,6 @@
                     </div>
                 </div>
                 
-                <!-- Project 3:
+                <!-- Project 3: Automated Tomcat Deployment -->
+                <div class="project-card glass neon-glow">
+                    <div class="project-number
