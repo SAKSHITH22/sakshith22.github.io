@@ -636,25 +636,139 @@
             box-shadow: 0 0 0 2px rgba(0, 243, 255, 0.1);
         }
         
-        /* Footer */
+        /* Footer Styles */
         footer {
-            padding: 3rem 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 4rem 0 2rem;
             background: var(--bg-secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
         
-        .footer-content {
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-about {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
+            align-items: flex-start;
         }
         
-        .back-to-top {
-            background: rgba(0, 243, 255, 0.1);
+        .footer-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            border: 3px solid var(--neon-cyan);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+        }
+        
+        .footer-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .footer-about h3 {
+            margin-bottom: 0.5rem;
+            color: var(--neon-cyan);
+        }
+        
+        .footer-about p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             width: 40px;
             height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            color: var(--neon-cyan);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+        }
+        
+        .social-links a:hover {
+            background: rgba(0, 243, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 243, 255, 0.2);
+        }
+        
+        .footer-links h3,
+        .footer-contact h3 {
+            color: var(--neon-cyan);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--neon-cyan);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        .footer-contact i {
+            color: var(--neon-cyan);
+            width: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .copyright p {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 243, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -662,11 +776,15 @@
             color: var(--neon-cyan);
             text-decoration: none;
             transition: all var(--transition-fast);
+            z-index: 999;
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            backdrop-filter: blur(10px);
         }
         
         .back-to-top:hover {
             background: rgba(0, 243, 255, 0.2);
             transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 243, 255, 0.3);
         }
         
         /* Responsive Styles */
@@ -692,6 +810,14 @@
             
             .hero {
                 padding-top: 120px;
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-about {
+                grid-column: span 2;
             }
         }
         
@@ -794,6 +920,32 @@
             .project-preview {
                 height: 150px;
             }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-about {
+                grid-column: span 1;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .footer-links,
+            .footer-contact {
+                text-align: center;
+            }
+            
+            .footer-contact p {
+                justify-content: center;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -834,6 +986,17 @@
             
             .project-icon {
                 font-size: 2rem;
+            }
+            
+            .footer-container {
+                gap: 2rem;
+            }
+            
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
             }
         }
     </style>
@@ -991,269 +1154,4 @@
                     </div>
                 </div>
                 
-                <!-- Project 3: Automated Tomcat Deployment -->
-                <div class="project-card glass neon-glow">
-                    <div class="project-number">03</div>
-                    <h3>Automated Tomcat Deployment using Ansible</h3>
-                    
-                    <div class="project-preview">
-                        <div class="icon-container">
-                            <i class="fab fa-linux project-icon"></i>
-                            <i class="fas fa-cogs project-icon"></i>
-                            <i class="fas fa-file-code project-icon"></i>
-                            <i class="fab fa-java project-icon"></i>
-                            <i class="fas fa-robot project-icon"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="tech-stack">
-                        <span class="tech-badge"><i class="fas fa-cogs"></i> Ansible</span>
-                        <span class="tech-badge"><i class="fab fa-linux"></i> Linux (Ubuntu)</span>
-                        <span class="tech-badge"><i class="fas fa-file-code"></i> YAML</span>
-                        <span class="tech-badge"><i class="fab fa-java"></i> Tomcat</span>
-                        <span class="tech-badge"><i class="fab fa-git-alt"></i> Git</span>
-                        <span class="tech-badge"><i class="fas fa-robot"></i> Automation</span>
-                        <span class="tech-badge"><i class="fas fa-code"></i> Playbooks</span>
-                    </div>
-                    
-                    <p>Developed Ansible playbooks to automate installation and configuration of Apache Tomcat on multiple Linux servers, ensuring faster and consistent deployments.</p>
-                    
-                    <div class="responsibilities">
-                        <h4>Key Responsibilities:</h4>
-                        <ul>
-                            <li>Created Ansible playbooks for Tomcat automation</li>
-                            <li>Managed dependencies and configurations using YAML</li>
-                            <li>Used Ansible inventory for multi-server deployment</li>
-                            <li>Improved deployment speed and reduced manual errors</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="project-actions">
-                        <a href="https://github.com/SAKSHITH22" target="_blank" class="btn btn-secondary">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2>Technical Skills</h2>
-            <div class="skills-container">
-                <!-- Cloud Skills -->
-                <div class="skill-category glass neon-glow">
-                    <h3><i class="fas fa-cloud"></i> Cloud Platforms</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Amazon Web Services (AWS)</span>
-                        <span class="skill-item">EC2</span>
-                        <span class="skill-item">VPC</span>
-                        <span class="skill-item">IAM</span>
-                        <span class="skill-item">S3</span>
-                        <span class="skill-item">RDS</span>
-                        <span class="skill-item">Security Groups</span>
-                        <span class="skill-item">Load Balancer</span>
-                        <span class="skill-item">Auto Scaling</span>
-                    </div>
-                </div>
-                
-                <!-- DevOps Tools -->
-                <div class="skill-category glass neon-glow">
-                    <h3><i class="fas fa-tools"></i> DevOps Tools</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Terraform</span>
-                        <span class="skill-item">Ansible</span>
-                        <span class="skill-item">Docker</span>
-                        <span class="skill-item">Kubernetes</span>
-                        <span class="skill-item">Linux (Ubuntu)</span>
-                        <span class="skill-item">Git/GitHub</span>
-                    </div>
-                </div>
-                
-                <!-- CI/CD -->
-                <div class="skill-category glass neon-glow">
-                    <h3><i class="fas fa-code-branch"></i> CI/CD & Source Code</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Jenkins</span>
-                        <span class="skill-item">CI/CD Pipelines</span>
-                        <span class="skill-item">Git Version Control</span>
-                        <span class="skill-item">Infrastructure as Code</span>
-                        <span class="skill-item">Deployment Automation</span>
-                    </div>
-                </div>
-                                <!-- Contact Section - Added -->
-                <section id="contact">
-                    <div class="container">
-                        <h2>Contact Me</h2>
-                        <div class="contact-content">
-                            <div class="contact-info">
-                                <div class="contact-item glass">
-                                    <i class="fas fa-envelope"></i>
-                                    <div class="contact-details">
-                                        <h4>Email</h4>
-                                        <p><a href="mailto:sakshithreddy.7@gmail.com">sakshithreddy.7@gmail.com</a></p>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-item glass">
-                                    <i class="fas fa-phone"></i>
-                                    <div class="contact-details">
-                                        <h4>Phone</h4>
-                                        <p>+91 6300047653</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-item glass">
-                                    <i class="fab fa-linkedin"></i>
-                                    <div class="contact-details">
-                                        <h4>LinkedIn</h4>
-                                        <p><a href="https://www.linkedin.com/in/sakshith-reddy-siddireddygari" target="_blank">linkedin.com/in/sakshith-reddy-siddireddygari</a></p>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-item glass">
-                                    <i class="fab fa-github"></i>
-                                    <div class="contact-details">
-                                        <h4>GitHub</h4>
-                                        <p><a href="https://github.com/SAKSHITH22" target="_blank">github.com/SAKSHITH22</a></p>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-item glass">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <div class="contact-details">
-                                        <h4>Location</h4>
-                                        <p>Hyderabad, Telangana</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-form glass" style="padding: 2rem;">
-                                <h3 style="margin-bottom: 1.5rem;">Send a Message</h3>
-                                <form id="contactForm">
-                                    <div class="form-group">
-                                        <label for="name">Name</label>
-                                        <input type="text" id="name" name="name" required>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" id="email" name="email" required>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="subject">Subject</label>
-                                        <input type="text" id="subject" name="subject" required>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="message">Message</label>
-                                        <textarea id="message" name="message" required></textarea>
-                                    </div>
-                                    
-                                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                                    
-                                    <div id="contactStatus" class="contact-status"></div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-             
-               
-
-                <script>
-                    // Navigation toggle for mobile
-                    const hamburger = document.getElementById('hamburger');
-                    const navLinks = document.getElementById('navLinks');
-                    
-                    hamburger.addEventListener('click', () => {
-                        navLinks.classList.toggle('active');
-                    });
-                    
-                    // Close mobile menu when clicking a link
-                    document.querySelectorAll('.nav-links a').forEach(link => {
-                        link.addEventListener('click', () => {
-                            navLinks.classList.remove('active');
-                        });
-                    });
-                    
-                    // Form submission handling
-                    const contactForm = document.getElementById('contactForm');
-                    const contactStatus = document.getElementById('contactStatus');
-                    
-                    contactForm.addEventListener('submit', function(e) {
-                        e.preventDefault();
-                        
-                        // Simple form validation
-                        const name = document.getElementById('name').value;
-                        const email = document.getElementById('email').value;
-                        const subject = document.getElementById('subject').value;
-                        const message = document.getElementById('message').value;
-                        
-                        if (!name || !email || !subject || !message) {
-                            contactStatus.textContent = 'Please fill in all fields.';
-                            contactStatus.className = 'contact-status error';
-                            return;
-                        }
-                        
-                        // Here you would typically send the form data to a server
-                        // For now, we'll just show a success message
-                        contactStatus.textContent = 'Thank you for your message! I\'ll get back to you soon.';
-                        contactStatus.className = 'contact-status success';
-                        
-                        // Reset form
-                        contactForm.reset();
-                        
-                        // Clear status message after 5 seconds
-                        setTimeout(() => {
-                            contactStatus.textContent = '';
-                            contactStatus.className = 'contact-status';
-                        }, 5000);
-                    });
-                    
-                    // Smooth scrolling for navigation links
-                    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                        anchor.addEventListener('click', function (e) {
-                            e.preventDefault();
-                            
-                            const targetId = this.getAttribute('href');
-                            if (targetId === '#') return;
-                            
-                            const targetElement = document.querySelector(targetId);
-                            if (targetElement) {
-                                window.scrollTo({
-                                    top: targetElement.offsetTop - 80,
-                                    behavior: 'smooth'
-                                });
-                            }
-                        });
-                    });
-                    
-                    // Update active navigation link on scroll
-                    window.addEventListener('scroll', () => {
-                        const sections = document.querySelectorAll('section');
-                        const navLinks = document.querySelectorAll('.nav-links a');
-                        
-                        let current = '';
-                        sections.forEach(section => {
-                            const sectionTop = section.offsetTop;
-                            const sectionHeight = section.clientHeight;
-                            if (scrollY >= (sectionTop - 100)) {
-                                current = section.getAttribute('id');
-                            }
-                        });
-                        
-                        navLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href') === `#${current}`) {
-                                link.classList.add('active');
-                            }
-                        });
-                    });
-                </script>
-            </body>
-            </html>
+                <!-- Project 3:
